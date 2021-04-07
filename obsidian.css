@@ -1,0 +1,120 @@
+.theme-dark
+{
+  --background-primary: #25272c;
+  --background-primary-alt: #272b33;
+  --background-secondary: #202225;
+  --background-secondary-alt: #1f2022;
+  --text-normal: #c2d7db;
+  --text-faint: #999999;
+  --text-title-h1: rgb(252, 246, 1, 0.70);
+  --text-title-h2: rgb(252, 246, 1, 0.5);
+  --text-title-h3: #52c1da;
+  --text-title-h4: #bfbfbf;
+  --text-title-h5: #52c1da;
+  --text-title-h6: #bfbfbf;
+  --text-link: #99ff99;
+  --text-a: #d669bc;
+  --text-a-hover: #b3a14b;
+  --text-mark: rgb(252, 246, 1, 0.45); /* SEE HIGHLIGHTER */
+  --pre-code: #272524d9;
+  --text-highlight-bg: rgba(252, 246, 1, 0.4); /* SEE HIGHLIGHTER */
+  /* --interactive-accent: rgb(252, 246, 1, 0.95); */
+  --interactive-before: #5e6565;
+  --background-modifier-border: #595959;
+  --blockquote-border: #9e8aff;
+  --text-accent: #319cb4;
+  --interactive-accent-rgb: #fe8019;
+  --font-family-editor: Avenir, Avenir Next, var(--default-font), sans-serif;
+  --font-family-preview: Avenir, Avenir Next, var(--default-font), sans-serif;
+  --text-selection: #164f92;
+  --text-on-accent: #2f3136
+}
+.root{
+  --default-font: 'Inter'
+}
+
+/* code color change */
+.markdown-preview-view code {
+  color: #25c7bf;
+  font-family: var(--font-monospace);
+  background-color: var(--background-primary-alt);
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 0.85em;
+}
+/* .cm-s-obsidian span.cm-inline-code {
+  color: #518b78;
+  font-size: 90%;
+  background-color: var(--background-primary-alt);
+  vertical-align: baseline;
+} */
+
+.cm-s-obsidian .HyperMD-codeblock {
+  font-family: var(--font-monospace);
+  line-height: 1.3;
+  color: #c5a6ae;
+  background-color: var(--background-primary-alt);
+  font-size: 0.85em;
+}
+
+/* Add quotation character before quote */
+blockquote:before {
+  font: 14px/20px italic Times, serif;
+  content: "“";
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+blockquote p { display: inline; }
+
+/* 리스트 줄 만들기 */
+.cm-hmd-list-indent .cm-tab, ul ul, ol ol, ul ol, ol ul{ position: relative; }
+.cm-hmd-list-indent .cm-tab::before, ul ul::before, ol ol::before, ul ol::before, ol ul::before{
+  content:'';
+  border-left: 1.7px solid rgba(102, 236, 236, 0.555);
+  position: absolute;
+}
+.cm-hmd-list-indent .cm-tab::before { left: 0; top: -5px; bottom: -4px; 
+}
+ul ul::before, ol ol::before , ul ol::before, ol ul::before { left: -15px; top: 0; bottom: 0; 
+} 
+
+/* outliner for the outline */
+.tree-view-item-children{
+  content: ' ';
+  border-left: 1px solid rgba(118,158,165,0.2);
+  border-radius:0 0px 0px 0;
+}
+
+
+/* 태그 채우기 */
+.tag {
+  background-color: var(--text-accent);
+  border: none;
+  color: white;
+  font-size: 11px;
+  padding: 1px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 0px;
+  cursor: pointer;
+  border-radius: 14px;
+}
+.tag:hover {
+color: white;
+background-color: var(--text-accent-hover);
+}
+.tag[href^="#obsidian"] {
+  background-color: #1141df;
+  opacity: 0.6;
+}
+.tag[href^="#important"] {
+  background-color: rgba(134, 201, 218, 0.781);
+}
+.tag[href^="#complete"] {
+  background-color: rgb(129, 202, 153, 0.6);
+}
+.tag[href^="#inprogress"] {
+  background-color: rgb(255, 117, 25, 0.6);
+}
